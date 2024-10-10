@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Checking for root rights:
+if [ "$EUID" -ne 0 ]; then
+	echo "Please run this script with root privileges."
+	exit 1
+fi
+
 # Create users
 create_user() {
 	echo "Create user..."
