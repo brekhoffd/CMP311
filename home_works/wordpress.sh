@@ -14,3 +14,12 @@ update-locale LANG=en_US.UTF-8
 # Update system and install required packages:
 apt update && apt upgrade -y
 apt install nginx mysql-server php-fpm php-mysql php-cli php-curl php-xml unzip
+
+# Stop and disable Apache if it's running:
+if systemctl is-active --quiet apache2; then
+	systemctl stop apache2
+	systemctl disable apache2
+fi
+
+# Download WordPress:
+
