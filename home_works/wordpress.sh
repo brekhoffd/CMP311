@@ -21,6 +21,45 @@ if systemctl is-active --quiet apache2; then
 	systemctl disable apache2
 fi
 
+# Secure MySQL installation (using expect to automate the process):
+read -p "Enter the MySQL root password: " MYSQL_ROOT_PASSWORD
+
+SECURE_MYSQL=$(expect -c "
+
+set timeout 10
+spawn mysql_secure_installation
+
+expect \"Enter password for user root:\"
+send \"$MYSQL_ROOT_PASSWORD\r\"
+
+expect \"Press y|Y for Yes, any other key for No:\"
+send \"y\r\"
+
+expect \"New password:\"
+send \"$MYSQL_ROOT_PASSWORD\r\"
+
+expect \"Re-enter new password:\"
+send \"$MYSQL_ROOT_PASSWORD\r\"
+
+expect \"Remove anonymous users?\"
+send \"y\r\"
+
+expect \"Disallow root login remotely?\"
+send \"y\r\"
+
+expect \"Remove test database and access to it?\"
+send \"y\r\"
+
+expect \"Reload privilege tables now?\"
+send \"y\r\"
+
+expect eof
+")
+
+echo "$SECURE_MYSQL"
+
+pause
+
 # Download WordPress:
 wget https://wordpress.org/latest.zip
 unzip latest.zip
