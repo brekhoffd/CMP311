@@ -33,7 +33,7 @@ chmod -R 755 /var/www/html/wordpress
 # Create a database for WordPress:
 read -p "Enter the name of the new WordPress database: " DB_NAME
 read -p "Enter the name of the new WordPress user: " DB_USER
-read -p "Enter the password of the WordPress user $DB_USER" DB_PASS
+read -p "Enter the password of the WordPress user $DB_USER: " DB_PASS
 
 mysql -e "CREATE DATABASE $DB_NAME;"
 mysql -e "CREATE USER '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASS';"
@@ -43,7 +43,7 @@ mysql -e "FLUSH PRIVILEGES;"
 # Configure Nginx:
 read -p "Enter the domain or IP-address of your server: " SERVER_NAME
 
-tee /etc/nginx/sites-available/wordpress <<EOL
+cat <<EOL > /etc/nginx/sites-available/wordpress
 server {
 	listen 80;
 	server_name $SERVER_NAME;
