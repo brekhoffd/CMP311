@@ -13,7 +13,7 @@ update-locale LANG=en_US.UTF-8
 
 # Update system and install required packages:
 apt update && apt upgrade -y
-apt install nginx mysql-server php-fpm php-mysql php-cli php-curl php-xml unzip
+apt install nginx mysql-server php-fpm php-mysql php-cli php-curl php-xml unzip -y
 
 # Stop and disable Apache if it's running:
 if systemctl is-active --quiet apache2; then
