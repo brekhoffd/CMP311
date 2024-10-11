@@ -22,6 +22,8 @@ if systemctl is-active --quiet apache2; then
 fi
 
 # Secure MySQL installation (using expect to automate the process):
+apt install expect -y
+
 read -p "Enter the MySQL root password: " MYSQL_ROOT_PASSWORD
 
 SECURE_MYSQL=$(expect -c "
@@ -58,7 +60,7 @@ expect eof
 
 echo "$SECURE_MYSQL"
 
-pause
+read -n 1 -s -r -p "Press any key to continue..."
 
 # Download WordPress:
 wget https://wordpress.org/latest.zip
