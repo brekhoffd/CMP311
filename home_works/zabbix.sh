@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Checking for root rights:
-if [ "$EUID" -ne 0 ]; then
+if [ "$(id -u)" -ne 0 ]; then
 	echo "Please run this script with root privileges."
 	exit 1
 fi
