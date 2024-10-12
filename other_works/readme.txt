@@ -1,2 +1,2 @@
 Works that are not included in classwork or homework will be posted here.
-Додатково, буду розміщювати пояснення до робіт, українською (за потреби).
+За потреби, буду розміщювати пояснення до робіт (українською).
