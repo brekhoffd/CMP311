@@ -1,0 +1,24 @@
+***********************
+HOMEWORK FOR 26.10.2024
+***********************
+
+Current user:
+root
+
+The name and version of the operating system:
+Linux virtual-pc 6.8.0-45-generic #45-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug 30 12:02:04 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+
+The amount of free disk space:
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           392M  996K  391M   1% /run
+/dev/sda2        32G  7.2G   23G  25% /
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           392M   12K  392M   1% /run/user/1000
+
+List of active users on the system:
+ubuntu   pts/0        2024-10-21 10:30 (192.168.88.233)
+ubuntu   pts/1        2024-10-21 10:39 (192.168.88.233)
+
+End of system info!
+
