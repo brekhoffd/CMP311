@@ -1,7 +1,5 @@
 #!/bin/bash
 
-clear
-
 # Home work:
 echo "***********************"
 echo "HOMEWORK FOR 26/10/2024"
