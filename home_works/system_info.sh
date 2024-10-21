@@ -2,7 +2,7 @@
 
 # Home work:
 echo "***********************"
-echo "HOMEWORK FOR 26/10/2024"
+echo "HOMEWORK FOR 26.10.2024"
 echo "***********************"
 
 # Current user:
